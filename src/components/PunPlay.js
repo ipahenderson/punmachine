@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import scrollToComponent from 'react-scroll-to-component';
 
 
 export default class PunPlay extends React.Component {
   static defaultProps = {
     src: null,
-    width: 200,
-    height: 100,
     autoplay: true
   }
 
@@ -21,7 +18,10 @@ export default class PunPlay extends React.Component {
 
     function scrollFunc()
     {
-      document.getElementsByClassName('video-play')[0].scrollIntoView({block:"center"});
+      var vid = document.getElementsByClassName('video-play')[0]
+      if(vid){
+      vid.scrollIntoView({block:"center"});
+    }
     }
 
     if(this.video || !this.props.src)
@@ -33,14 +33,24 @@ export default class PunPlay extends React.Component {
 
     this.video = document.createElement('video');
     this.video.src = this.props.src;
-    // this.video.width = this.props.width;
-    // this.video.height = this.props.height;
     this.video.className = "video-play";
 
     this.video.autoplay = true;
     node.appendChild(this.video);
     scrollFunc()
-    console.log(document.getElementsByClassName('video-play')[0]);
+
+    var vidDelete = this.video
+
+    vidDelete.addEventListener('durationchange', function() {
+      console.log('Duration change', this.duration);
+
+      var vidLength = (Math.round(this.duration) * 1000)
+      setTimeout(function () {
+        node.removeChild(vidDelete)
+      }, vidLength);
+  });
+
+
   }
 
   render() {
