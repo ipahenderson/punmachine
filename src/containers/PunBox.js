@@ -1,5 +1,6 @@
 import React from 'react';
 import PunSearch from '../components/PunSearch'
+import PunPlay from '../components/PunPlay'
 
 
 class PunBox extends React.Component{
@@ -8,7 +9,7 @@ class PunBox extends React.Component{
 constructor(props){
   super(props)
   this.state = {
-    videos: ["vid1", "vid2", "vid3"],
+    videos: ["index", "http://techslides.com/demos/sample-videos/small.mp4", "vid2", "vid3"],
     currentVid: null,
     vidSearchNo: ''
   }
@@ -41,6 +42,7 @@ render(){
         vidSearchNo={this.state.vidSearchNo}
         onPunSearch={this.handleInput}
         onEnter={this.handleSearch} />
+      <PunPlay src={this.state.currentVid}/>
     </div>
   )
 }

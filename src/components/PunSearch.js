@@ -11,10 +11,11 @@ const PunSearch = (props) => {
     if (e.key === 'Enter'){
       e.preventDefault();
       props.onEnter();
-      console.log("Enter Working");
-      console.log(props.video);
+
     }
   }
+
+
 
 
   return (
@@ -22,6 +23,7 @@ const PunSearch = (props) => {
     <form>
         <p id="title">THE PUNMACHINE</p>
         <input
+          ref={input => input && input.focus()}
           id="pun-search"
           type="text"
           placeholder="   TYPE A NUMBER BETWEEN 1 AND 1000..."

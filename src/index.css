@@ -20,12 +20,11 @@ body {
 }
 
 #pun-box{
-  height:100vw; width:100vw;
+  height:50vw; width:100vw;
   display:flex;
 }
 
 form{
-
   width:100vw;
   display:flex;
   margin: auto;
@@ -42,11 +41,17 @@ form{
   border: none;
   position: absolute;
 }
+.video-play{
+z-index: 500;
+position:absolute;
+margin: auto;
+width: 100vw
+}
 
 input{
   width: 60vw;
   height: 5vw;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255,255,255, 1.0);
   font-family: 'Krona One', sans-serif;
   font-size: 2vw;
   color: black;
