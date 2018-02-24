@@ -12,19 +12,20 @@ constructor(props){
     currentVid: null,
     vidSearchNo: ''
   }
-  this.handleVideo = this.handleVideo.bind(this);
+  this.handleSearch = this.handleSearch.bind(this);
   this.handleInput = this.handleInput.bind(this);
 }
 
 
-handleVideo(){
-  console.log(this.state.videos);
+handleSearch(){
   if(this.state.vidSearchNo > this.state.videos.length){
+    this.setState({currentVid: null});
+    this.setState({vidSearchNo: ''})
     return
   }
   const selectedVid = this.state.videos[this.state.vidSearchNo];
   this.setState({currentVid: selectedVid});
-  this.state.vidSearchNo = '';
+  this.setState({vidSearchNo: ''})
 }
 
 handleInput(value){
@@ -39,7 +40,7 @@ render(){
         video={this.state.currentVid}
         vidSearchNo={this.state.vidSearchNo}
         onPunSearch={this.handleInput}
-        onEnter={this.handleVideo} />
+        onEnter={this.handleSearch} />
     </div>
   )
 }

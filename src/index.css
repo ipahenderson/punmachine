@@ -1,5 +1,60 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  margin:0;
+  background-color: olive;
+}
+
+
+::-webkit-input-placeholder { /* Chrome */
+  color: #D3D3D3 !important;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #D3D3D3 !important;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #D3D3D3 !important;
+  opacity: 1 !important;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #D3D3D3!important;
+  opacity: 1 !important;
+}
+
+#pun-box{
+  height:100vw; width:100vw;
+  display:flex;
+}
+
+form{
+
+  width:100vw;
+  display:flex;
+  margin: auto;
+}
+
+#title {
+  width: 100vw;
+  font-family: 'Krona One', sans-serif;
+  font-size: 6vw;
+  color: white;
+  margin: auto;
+  text-align: center;
+  border-radius: 5vw;
+  border: none;
+  position: absolute;
+}
+
+input{
+  width: 60vw;
+  height: 5vw;
+  background-color: rgba(255,255,255,0.9);
+  font-family: 'Krona One', sans-serif;
+  font-size: 2vw;
+  color: black;
+  margin:auto;
+  padding: 0vw 6vw 0vw 6vw;
+  margin-top: 8vw;
+  text-align: left;
+  outline: none;
+  border-radius: 5vw;
+  border: none;
 }
