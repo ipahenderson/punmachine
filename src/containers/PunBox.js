@@ -4,31 +4,46 @@ import PunPlay from '../components/PunPlay'
 
 
 class PunBox extends React.Component{
-// "index", "http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4", "vid2", "vid3"
 
 constructor(props){
   super(props)
   this.state = {
     videos: [
       {
-        number: 1,
-        src: "/videos/0001.mp4",
-        pun: "MEADIA"
+        number: 0,
+        src: "http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4",
+        pun: "MEADIA",
+        puntime: 10
       },
       {
         number: 1,
         src: "/videos/0001.mp4",
-        pun: "MEADIA"
+        pun: "MEADIA",
+        puntime: 9
+      },
+      {
+        number: 2,
+        src: "/videos/0002.mp4",
+        pun: "HANZ DOWN",
+        puntime: 9
+      },
+      {
+        number: 3,
+        src: "/videos/0003.mp4",
+        pun: "WRISTY BUSINESS",
+        puntime: 7
       }
       ],
     currentVid: {
       src: null,
-      pun: ''
+      pun: '',
+      puntime: ''
     },
     vidSearchNo: ''
   }
   this.handleSearch = this.handleSearch.bind(this);
   this.handleInput = this.handleInput.bind(this);
+  this.clearVid = this.clearVid.bind(this);
 }
 
 
@@ -47,6 +62,10 @@ handleInput(value){
 this.setState({vidSearchNo: value});
 }
 
+clearVid(){
+  this.setState({currentVid: {src:null}})
+}
+
 
 render(){
   return(
@@ -56,7 +75,7 @@ render(){
         vidSearchNo={this.state.vidSearchNo}
         onPunSearch={this.handleInput}
         onEnter={this.handleSearch} />
-      <PunPlay src={this.state.currentVid.src} videoText={this.state.currentVid.pun}/>
+      <PunPlay src={this.state.currentVid.src} videoText={this.state.currentVid.pun} punTime={this.state.currentVid.puntime} clearVid={this.clearVid}/>
     </div>
   )
 }

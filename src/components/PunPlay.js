@@ -39,13 +39,10 @@ export default class PunPlay extends React.Component {
       var timethis2 = timethis;
 
       setTimeout(function () {
-        console.log("working");
+        console.log(timethis2.props.punTime);
         timethis2.textOut.innerText = textIn
-      }, 3000);
-      //
-      // setTimeout(function () {
-      //   timethis2.textOut.innerText =''
-      // }, 5000);
+      }, timethis2.props.punTime * 1000);
+
     }
 
     if(!this.props.src)
@@ -65,7 +62,7 @@ export default class PunPlay extends React.Component {
     scrollFunc()
     videoTextDisplay()
 
-
+    this.props.clearVid()
     var vidDelete = this.video
     var textDelete = timethis.textOut
     vidDelete.addEventListener('durationchange', function() {
