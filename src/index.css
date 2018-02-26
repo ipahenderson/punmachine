@@ -32,8 +32,8 @@ form{
 
 #title {
   width: 100vw;
-  font-family: 'Krona One', sans-serif;
-  font-size: 6vw;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 7.3vw;
   color: white;
   margin: auto;
   text-align: center;
@@ -49,15 +49,15 @@ width: 100vw
 }
 
 input{
-  width: 60vw;
-  height: 5vw;
+  width: 41vw;
+  height: 2vw;
   background-color: rgba(255,255,255, 1.0);
-  font-family: 'Krona One', sans-serif;
-  font-size: 2vw;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5vw;
   color: black;
   margin:auto;
-  padding: 0vw 6vw 0vw 6vw;
-  margin-top: 8vw;
+  padding: 0vw 6vw 0vw 15vw;
+  margin-top: 8.5vw;
   text-align: left;
   outline: none;
   border-radius: 5vw;

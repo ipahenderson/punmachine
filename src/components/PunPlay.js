@@ -24,7 +24,7 @@ export default class PunPlay extends React.Component {
     }
     }
 
-    if(this.video || !this.props.src)
+    if(!this.props.src)
     return;
 
     let node = ReactDOM.findDOMNode(this.refs.videoplayer);
@@ -37,6 +37,7 @@ export default class PunPlay extends React.Component {
 
     this.video.autoplay = true;
     node.appendChild(this.video);
+
     scrollFunc()
 
     var vidDelete = this.video
@@ -46,8 +47,8 @@ export default class PunPlay extends React.Component {
 
       var vidLength = (Math.round(this.duration) * 1000)
       setTimeout(function () {
-        node.removeChild(vidDelete)
-      }, vidLength);
+        node.removeChild(vidDelete)},5000)
+      // }, vidLength);
   });
 
 

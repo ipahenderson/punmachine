@@ -9,7 +9,7 @@ class PunBox extends React.Component{
 constructor(props){
   super(props)
   this.state = {
-    videos: ["index", "http://techslides.com/demos/sample-videos/small.mp4", "vid2", "vid3"],
+    videos: ["index", "http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4", "vid2", "vid3"],
     currentVid: null,
     vidSearchNo: ''
   }
