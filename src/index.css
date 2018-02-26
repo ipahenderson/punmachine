@@ -1,6 +1,7 @@
 body {
   margin:0;
   background-color: olive;
+  overflow: hidden;
 }
 
 
@@ -49,9 +50,13 @@ width: 100vw
 }
 
 .video-text{
+  font-family: 'Open Sans', sans-serif;
   position: absolute;
   font-size: 6vw;
   color: white;
+  text-align: center;
+  margin-left: 35vw;
+  margin-top: 30vw;
 }
 
 input{

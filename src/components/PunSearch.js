@@ -25,6 +25,7 @@ const PunSearch = (props) => {
         <input
           ref={input => input && input.focus()}
           id="pun-search"
+          autocomplete="off"
           type="text"
           placeholder="   TYPE A NUMBER BETWEEN 1 AND 1000..."
           onChange={handleSearch}

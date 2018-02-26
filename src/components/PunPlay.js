@@ -41,11 +41,11 @@ export default class PunPlay extends React.Component {
       setTimeout(function () {
         console.log("working");
         timethis2.textOut.innerText = textIn
-      }, 2000);
-
-      setTimeout(function () {
-        timethis2.textOut.innerText =''
-      }, 5000);
+      }, 3000);
+      //
+      // setTimeout(function () {
+      //   timethis2.textOut.innerText =''
+      // }, 5000);
     }
 
     if(!this.props.src)
@@ -58,8 +58,8 @@ export default class PunPlay extends React.Component {
     this.video = document.createElement('video');
     this.video.src = this.props.src;
     this.video.className = "video-play";
-
     this.video.autoplay = true;
+    console.log(this.video.autoplay);
     node.appendChild(this.video);
 
     scrollFunc()
@@ -67,16 +67,16 @@ export default class PunPlay extends React.Component {
 
 
     var vidDelete = this.video
-
+    var textDelete = timethis.textOut
     vidDelete.addEventListener('durationchange', function() {
       console.log('Duration change', this.duration);
       var vidLength = (Math.round(this.duration) * 1000)
       setTimeout(function () {
-        node.removeChild(vidDelete)},5000)
-        // }, vidLength);
+        node.removeChild(vidDelete)
+        nodeText.removeChild(textDelete)
+      },(vidLength + 1000));
+
       });
-
-
 
 
     }
