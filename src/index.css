@@ -42,10 +42,16 @@ form{
   position: absolute;
 }
 .video-play{
-z-index: 500;
+z-index: -1;
 position:absolute;
 margin: auto;
 width: 100vw
+}
+
+.video-text{
+  position: absolute;
+  font-size: 6vw;
+  color: white;
 }
 
 input{

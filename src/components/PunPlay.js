@@ -5,12 +5,13 @@ import ReactDOM from 'react-dom'
 export default class PunPlay extends React.Component {
   static defaultProps = {
     src: null,
-    autoplay: true
+    videoText: null,
+    autoplay: true,
+    display: ''
   }
 
   componentDidMount() { this.loadVideo(); }
   componentDidUpdate() { this.loadVideo(); }
-
 
 
 
@@ -20,8 +21,31 @@ export default class PunPlay extends React.Component {
     {
       var vid = document.getElementsByClassName('video-play')[0]
       if(vid){
-      vid.scrollIntoView({block:"center"});
+        vid.scrollIntoView({block:"center"});
+      }
     }
+
+    var container = this.refs.videotext
+    var timethis = this;
+    let nodeText = ReactDOM.findDOMNode(container);
+
+
+    function videoTextDisplay(){
+      const textIn = timethis.props.videoText
+
+
+      timethis.textOut = document.createElement('h1');
+      nodeText.appendChild(timethis.textOut);
+      var timethis2 = timethis;
+
+      setTimeout(function () {
+        console.log("working");
+        timethis2.textOut.innerText = textIn
+      }, 2000);
+
+      setTimeout(function () {
+        timethis2.textOut.innerText =''
+      }, 5000);
     }
 
     if(!this.props.src)
@@ -39,22 +63,31 @@ export default class PunPlay extends React.Component {
     node.appendChild(this.video);
 
     scrollFunc()
+    videoTextDisplay()
+
 
     var vidDelete = this.video
 
     vidDelete.addEventListener('durationchange', function() {
       console.log('Duration change', this.duration);
-
       var vidLength = (Math.round(this.duration) * 1000)
       setTimeout(function () {
         node.removeChild(vidDelete)},5000)
-      // }, vidLength);
-  });
+        // }, vidLength);
+      });
 
 
+
+
+    }
+
+    render() {
+
+      return (
+        <div>
+          <div ref="videoplayer"></div>
+          <div ref="videotext" className="video-text"></div>
+        </div>
+      )
+    }
   }
-
-  render() {
-    return <div ref="videoplayer" />;
-  }
-}

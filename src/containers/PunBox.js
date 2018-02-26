@@ -42,7 +42,7 @@ render(){
         vidSearchNo={this.state.vidSearchNo}
         onPunSearch={this.handleInput}
         onEnter={this.handleSearch} />
-      <PunPlay src={this.state.currentVid}/>
+      <PunPlay src={this.state.currentVid} videoText="TEST"/>
     </div>
   )
 }
