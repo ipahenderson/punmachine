@@ -25,13 +25,13 @@ constructor(props){
         number: 2,
         src: "/videos/0002.mp4",
         pun: "HANZ DOWN",
-        puntime: 9
+        puntime: 7.3
       },
       {
         number: 3,
         src: "/videos/0003.mp4",
         pun: "WRISTY BUSINESS",
-        puntime: 7
+        puntime: 7.5
       }
       ],
     currentVid: {

@@ -1,7 +1,10 @@
 body {
   margin:0;
-  background-color: olive;
+  background-color: black;
   overflow: hidden;
+  background-image: url(/images/background1.jpg);
+  background-size: 100vw;
+  background-repeat: no-repeat;
 }
 
 
@@ -41,12 +44,14 @@ form{
   border-radius: 5vw;
   border: none;
   position: absolute;
+  font-weight: bold;
 }
 .video-play{
 z-index: -1;
 position:absolute;
 margin: auto;
 width: 100vw;
+margin-top:3vh;
 }
 
 .video-text{
