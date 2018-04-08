@@ -8,32 +8,7 @@ class PunBox extends React.Component{
 constructor(props){
   super(props)
   this.state = {
-    videos: [
-      {
-        number: 0,
-        src: "http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4",
-        pun: "MEADIA",
-        puntime: 10
-      },
-      {
-        number: 1,
-        src: "/videos/0001.mp4",
-        pun: "MEADIA",
-        puntime: 9
-      },
-      {
-        number: 2,
-        src: "/videos/0002.mp4",
-        pun: "HANZ DOWN",
-        puntime: 7.3
-      },
-      {
-        number: 3,
-        src: "/videos/0003.mp4",
-        pun: "WRISTY BUSINESS",
-        puntime: 7.5
-      }
-      ],
+    videos: require('../data/videos.js'),
     currentVid: {
       src: null,
       pun: '',
