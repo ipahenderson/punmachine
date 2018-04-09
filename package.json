@@ -6,6 +6,7 @@
     "node-sass-chokidar": "^1.2.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-numeric-input": "^2.2.3",
     "react-scripts": "1.1.1",
     "react-scroll-to-component": "^1.0.2",
     "redux": "^3.7.2",

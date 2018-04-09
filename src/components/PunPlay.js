@@ -6,6 +6,7 @@ export default class PunPlay extends React.Component {
   static defaultProps = {
     src: null,
     videoText: null,
+    videoSearchNo: null,
     autoplay: true,
     display: ''
   }
@@ -14,7 +15,7 @@ export default class PunPlay extends React.Component {
   componentDidUpdate() { this.loadVideo(); }
 
 
-
+//load vid
   loadVideo = () => {
 
     function scrollFunc()
@@ -25,25 +26,39 @@ export default class PunPlay extends React.Component {
       }
     }
 
-    var container = this.refs.videotext
+    var container = this.refs.videotexts
     var timethis = this;
     let nodeText = ReactDOM.findDOMNode(container);
 
 
+
     function videoTextDisplay(){
-      const textIn = timethis.props.videoText
+      if(!timethis.props.src)
+      return;
 
-
+      const textIn = "#" + timethis.props.videoSearchNo + " " + timethis.props.videoText
       timethis.textOut = document.createElement('h1');
+      timethis.textOut1 = document.createElement('h1');
+      timethis.textOut2 = document.createElement('h1');
+
+      timethis.textOut.className = "video-text";
+      timethis.textOut1.className = "video-text1";
+      timethis.textOut2.className = "video-text2";
+
       nodeText.appendChild(timethis.textOut);
+      nodeText.appendChild(timethis.textOut1);
+      nodeText.appendChild(timethis.textOut2);
+
       var timethis2 = timethis;
 
       setTimeout(function () {
-        console.log(timethis2.props.punTime);
         timethis2.textOut.innerText = textIn
+        timethis2.textOut1.innerText = textIn
+        timethis2.textOut2.innerText = textIn
       }, timethis2.props.punTime * 1000);
 
     }
+
 
     if(!this.props.src)
     return;
@@ -56,7 +71,7 @@ export default class PunPlay extends React.Component {
     this.video.src = this.props.src;
     this.video.className = "video-play";
     this.video.autoplay = true;
-    console.log(this.video.autoplay);
+
     node.appendChild(this.video);
 
     scrollFunc()
@@ -65,26 +80,30 @@ export default class PunPlay extends React.Component {
     this.props.clearVid()
     var vidDelete = this.video
     var textDelete = timethis.textOut
+    var textDelete1 = timethis.textOut1
+    var textDelete2 = timethis.textOut2
     vidDelete.addEventListener('durationchange', function() {
-      console.log('Duration change', this.duration);
+
       var vidLength = (Math.round(this.duration) * 1000)
       setTimeout(function () {
         node.removeChild(vidDelete)
         nodeText.removeChild(textDelete)
+        nodeText.removeChild(textDelete1)
+        nodeText.removeChild(textDelete2)
+
+        .focus()
       },(vidLength + 1000));
 
       });
 
+  }
 
-    }
-
-    render() {
-
+  render() {
       return (
         <div>
           <div ref="videoplayer"></div>
-          <div ref="videotext" className="video-text"></div>
-        </div>
+          <div ref="videotexts"></div>
+                </div>
       )
     }
-  }
+}

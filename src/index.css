@@ -23,6 +23,29 @@ body {
   opacity: 1 !important;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+input{
+  width: 41vw;
+  height: 3vw;
+  background-color: rgba(255,255,255, 1.0);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2vw;
+  color: black;
+  margin:auto;
+  padding: 0vw 6vw 0vw 15vw;
+  margin-top: 8.5vw;
+  text-align: left;
+  outline: none;
+  border-radius: 5vw;
+  border: none;
+}
 #pun-box{
   height:50vw; width:100vw;
   display:flex;
@@ -46,8 +69,12 @@ form{
   position: absolute;
   font-weight: bold;
 }
+
+
+
+
 .video-play{
-z-index: -1;
+z-index: -3;
 position:absolute;
 margin: auto;
 width: 100vw;
@@ -57,29 +84,77 @@ margin-top:3vh;
 .video-text{
   font-family: 'Open Sans', sans-serif;
   position: absolute;
-  font-size: 4vw;
-  color: white;
+  font-size: 5vw;
   text-align: center;
   margin-left: 0vw;
-  margin-top: 35vw;
+  margin-top: 48vw;
   width: 100vw;
+  color: white;
+ }
+ .video-text1 {
+   font-family: 'Open Sans', sans-serif;
+   position: absolute;
+   font-size: 5vw;
+   text-align: center;
+   margin-left: 0vw;
+   margin-top: 48vw;
+   width: 100vw;
+   animation: glitchy 0.3s ease 0.3s infinite;
+ }
+ .video-text2 {
+   font-family: 'Open Sans', sans-serif;
+   position: absolute;
+   font-size: 5vw;
+   text-align: center;
+   margin-left: 0vw;
+   margin-top: 48vw;
+   width: 100vw;
+   animation: glitchy1 0.3s ease 0.3s infinite;
  }
 
+ .video-text{
+   color: #fff;
+ }
+ .video-text1{
+   color: #0ff;
+   z-index: -1;
+ }
+ .video-text2{
+   color: #f0f;
+   z-index: -2;
+ }
 
-
-
-input{
-  width: 41vw;
-  height: 2vw;
-  background-color: rgba(255,255,255, 1.0);
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.5vw;
-  color: black;
-  margin:auto;
-  padding: 0vw 6vw 0vw 15vw;
-  margin-top: 8.5vw;
-  text-align: left;
-  outline: none;
-  border-radius: 5vw;
-  border: none;
-}
+ @keyframes glitchy {
+   0% {
+     transform: translate(-2px, 2px);
+   }
+   25% {
+     transform: translate(-2px, -2px);
+   }
+   50% {
+     transform: translate(2px, 2px);
+   }
+   75% {
+     transform: translate(2px, -2px);
+   }
+   100% {
+     transform: translate(-2px, 2px);
+   }
+ }
+ @keyframes glitchy1 {
+   0% {
+     transform: translate(-3px, 3px);
+   }
+   25% {
+     transform: translate(-3px, -3px);
+   }
+   50% {
+     transform: translate(3px, 3px);
+   }
+   75% {
+     transform: translate(3px, -3px);
+   }
+   100% {
+     transform: translate(-3px, 3px);
+   }
+ }
