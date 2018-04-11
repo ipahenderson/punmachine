@@ -33,6 +33,7 @@ const PunSearch = (props) => {
 
     <form>
         <p id="title">THE PUNMACHINE</p>
+
         <input
           ref={input => input && input.focus()}
           id="pun-search"
