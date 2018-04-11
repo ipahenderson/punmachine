@@ -92,13 +92,23 @@ margin-top:3vh;
   margin-left: 0vw;
   margin-top: 48vw;
   width: 100vw;
-  text-transform: uppercase;
 }
 
-.video-text {
+ .video-text {
    color: #fff;
 }
 
+ .video-text1 {
+   color: #0ff;
+   z-index: -1;
+   animation: glitchy 0.3s ease 0.3s infinite;
+}
+
+.video-text2 {
+   color: #f0f;
+   z-index: -2;
+   animation: glitchy1 0.3s ease 0.3s infinite;
+}
 
 
  @keyframes glitchy {
