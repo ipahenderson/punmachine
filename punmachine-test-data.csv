@@ -1,5 +1,6 @@
-number,src,pun,puntime
-0,"""http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4""","""JELLYFISH?""",3
-1,"""/videos/0001.mp4""","""MEADIA""",9
-2,"""/videos/0002.mp4""","""HANS DOWN""",7.3
-3,"""/videos/0003.mp4""","""WRISTY BUSINESS""",7.5
+number,src,pun,puntime,type
+0,"""http://mirrors.standaloneinstaller.com/video-sample/jellyfish-25-mbps-hd-hevc.mp4""","""JELLYFISH?""",3,"jelly"
+1,"""/videos/0001.mp4""","""meadia""",9,"bedroom"
+2,"""/videos/0002.mp4""","""hansdown""",7.3,"bedroom"
+3,"""/videos/0003.mp4""","""wristy business""",7.5,"naked"
+4,"""/videos/0052.mp4""","""ice to meet you""",13.5,"snow"

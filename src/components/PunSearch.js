@@ -9,6 +9,9 @@ const PunSearch = (props) => {
   }
 
   function checkInput(e) {
+      if(e.keyCode === 116){
+      return
+      }
       if(e.keyCode === 8){
       return
       }

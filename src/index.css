@@ -29,6 +29,7 @@ input[type=number]::-webkit-outer-spin-button {
     -moz-appearance: none;
     appearance: none;
     margin: 0;
+
 }
 
 input{
@@ -45,6 +46,8 @@ input{
   outline: none;
   border-radius: 5vw;
   border: none;
+  z-index: 2;
+
 }
 #pun-box{
   height:50vw; width:100vw;
@@ -81,7 +84,7 @@ width: 100vw;
 margin-top:3vh;
 }
 
-.video-text{
+.video-text, .video-text1, .video-text2{
   font-family: 'Open Sans', sans-serif;
   position: absolute;
   font-size: 5vw;
@@ -89,40 +92,25 @@ margin-top:3vh;
   margin-left: 0vw;
   margin-top: 48vw;
   width: 100vw;
-  color: white;
- }
- .video-text1 {
-   font-family: 'Open Sans', sans-serif;
-   position: absolute;
-   font-size: 5vw;
-   text-align: center;
-   margin-left: 0vw;
-   margin-top: 48vw;
-   width: 100vw;
-   animation: glitchy 0.3s ease 0.3s infinite;
- }
- .video-text2 {
-   font-family: 'Open Sans', sans-serif;
-   position: absolute;
-   font-size: 5vw;
-   text-align: center;
-   margin-left: 0vw;
-   margin-top: 48vw;
-   width: 100vw;
-   animation: glitchy1 0.3s ease 0.3s infinite;
- }
+  text-transform: uppercase;
+}
 
- .video-text{
+ .video-text {
    color: #fff;
- }
- .video-text1{
+}
+
+ .video-text1 {
    color: #0ff;
    z-index: -1;
- }
- .video-text2{
+   animation: glitchy 0.3s ease 0.3s infinite;
+}
+
+.video-text2 {
    color: #f0f;
    z-index: -2;
- }
+   animation: glitchy1 0.3s ease 0.3s infinite;
+}
+
 
  @keyframes glitchy {
    0% {

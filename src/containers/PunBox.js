@@ -12,9 +12,12 @@ class PunBox extends React.Component{
       currentVid: {
         src: null,
         pun: '',
-        puntime: ''
+        puntime: '',
+        type: ''
       },
-      vidSearchNo: ""
+      vidSearchNo: '',
+      previousType: '',
+      deleteInt: ''
     }
     this.handleSearch = this.handleSearch.bind(this);
     this.handleInput = this.handleInput.bind(this);
@@ -23,12 +26,34 @@ class PunBox extends React.Component{
 
 
   handleSearch(){
-    if(this.state.vidSearchNo > this.state.videos.length){
-      this.setState({currentVid: null});
-      this.setState({vidSearchNo: ''})
-      return
+    var t = this;
+    function getRandomInt(max) {
+      var randomNum = Math.floor(Math.random() * Math.floor(max));
+
+
+      if(randomNum < 1 || randomNum >= t.state.videos.length){
+      randomNum = Math.floor(Math.random() * Math.floor(max));
+      }
+      this.setState({deleteInt: randomNum});
+      return randomNum
+
     }
-    const selectedVid = this.state.videos[this.state.vidSearchNo];
+
+    // if(this.state.vidSearchNo > (this.state.videos.length)){
+    //   this.setState({currentVid: null});
+    //   this.setState({vidSearchNo: ''})
+    //   return
+    // }
+
+    var searchNo = Math.floor(Math.random() * Math.floor(this.state.videos.length))
+    var selectedVid = this.state.videos[searchNo];
+    if (selectedVid.type === this.state.previousType)
+    {
+      var randomInt = getRandomInt((this.state.videos.length));
+      selectedVid = this.state.videos[randomInt]
+    }
+
+    this.setState({previousType: selectedVid.type});
     this.setState({currentVid: selectedVid});
 
   }
@@ -40,6 +65,7 @@ class PunBox extends React.Component{
   clearVid(){
     this.setState({currentVid: {src:null}})
     this.setState({vidSearchNo: ""})
+    this.state.videos.splice(this.state.deleteInt, 1)
   }
 
 
